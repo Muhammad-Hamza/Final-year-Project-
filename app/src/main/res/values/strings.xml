@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">Final Year Project</string>
+    
+
+
+
+
+
+    <string-array name="town_array">
+
+
+        <item>Bin Qasim town</item>
+        <item>Kimari Town</item>
+        <item>korangi Town</item>
+        <item>New Kalachi Town</item>
+        <item>North Nazimabad Town</item>
+        <item>Gadap Town</item>
+        <item>Gulberg Town</item>
+        <item>Gulshan Town</item>
+        <item>Landhi Town</item>
+        <item>Lyari Town</item>
+        <item>Liaquatabad Town</item>
+        <item>Orangi Town</item>
+        <item>Jamshed Town</item>
+        <item>Malir Town</item>
+        <item>Saddar Town</item>
+        <item>Shah Faisal Town</item>
+        <item>SITE town</item>
+
+
+
+
+
+
+
+    </string-array>
 </resources>

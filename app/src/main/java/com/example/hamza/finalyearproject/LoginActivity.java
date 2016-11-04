@@ -48,7 +48,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-              Toast.makeText(getApplicationContext(),"working",Toast.LENGTH_SHORT).show();
+                //submit complain Activity
+              Intent intent = new Intent(LoginActivity.this,submitComplainActivity.class);
+                startActivity(intent);
 
 
 

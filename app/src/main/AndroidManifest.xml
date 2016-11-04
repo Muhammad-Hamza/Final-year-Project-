@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".signupActivity">
         </activity>
+        <activity android:name=".submitComplainActivity">
+        </activity>
     </application>
 
 </manifest>
