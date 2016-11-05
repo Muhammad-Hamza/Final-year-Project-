@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">Final Year Project</string>
-    
-
-
-
 
 
     <string-array name="town_array">
@@ -26,11 +22,6 @@
         <item>Saddar Town</item>
         <item>Shah Faisal Town</item>
         <item>SITE town</item>
-
-
-
-
-
 
 
     </string-array>

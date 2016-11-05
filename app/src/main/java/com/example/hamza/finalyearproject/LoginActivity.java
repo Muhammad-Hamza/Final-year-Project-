@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 //submit complain Activity
-              Intent intent = new Intent(LoginActivity.this,submitComplainActivity.class);
+              Intent intent = new Intent(LoginActivity.this,ComplainSubmision.class);
                 startActivity(intent);
 
 
