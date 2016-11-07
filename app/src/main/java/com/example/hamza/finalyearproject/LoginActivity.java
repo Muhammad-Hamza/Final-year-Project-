@@ -19,6 +19,8 @@ import butterknife.BindViews;
 
 public class LoginActivity extends AppCompatActivity {
 
+    DataBaseHelperClass complainDB;
+
     private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
     private static final String TAG = "Login Activity";
     private static final int REQUEST_SIGNUP = 0;
@@ -38,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        complainDB = new DataBaseHelperClass(this);
 
 
 
