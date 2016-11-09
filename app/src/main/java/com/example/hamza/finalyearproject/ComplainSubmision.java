@@ -23,7 +23,7 @@ public class ComplainSubmision extends AppCompatActivity {
 
     AutoCompleteTextView townTextView,complainTypetextView;
     EditText unioncouncils,desc;
-    Button complainNextButton;
+    Button complainNextButton,databaseManagerButton;
     private static final int IMAGE_REQUEST = 1888;
     DBHelper complainDB;
     SQLiteDatabase db;
@@ -74,13 +74,7 @@ public class ComplainSubmision extends AppCompatActivity {
         complainTypetextView.setThreshold(1);
 
         ImageView cameraIntent = (ImageView) findViewById(R.id.camera);
-        cameraIntent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent dbmanager = new Intent(ComplainSubmision.this,AndroidDatabaseManager.class);
-                startActivity(dbmanager);
-            }
-        });
+
         //Camera Intent
       /**  ImageView cameraIntent = (ImageView) findViewById(R.id.camera);
       cameraIntent.setOnClickListener(new View.OnClickListener() {
@@ -94,33 +88,38 @@ public class ComplainSubmision extends AppCompatActivity {
         });**/
 
         //NextButton Of Complainsubmision
+        complainNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //InsertDAta into Database
+                insertData();
+                Intent intent = new Intent(ComplainSubmision.this,ComplainSubmisionAuthentication.class);
+                startActivity(intent);
+            }
+        });
+        databaseManagerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent dbmanager = new Intent(ComplainSubmision.this,AndroidDatabaseManager.class);
+                startActivity(dbmanager);
+
+            }
+        });
 
 
 
-        insertData();
+
+
 
 
         }
 
 
     public void insertData()
-
-
-
     {
-        complainNextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-
-
-                Boolean isInserted =  complainDB.insertComplain(townTextView.getText().toString(),unioncouncils.getText().toString(),
+                Boolean isInserted =  complainDB.insertComplain(townTextView.getText().toString(),
+                        unioncouncils.getText().toString(),
                         complainTypetextView.getText().toString(),desc.getText().toString());
-
-
-
-
 
                 if(isInserted)
                 {
@@ -129,12 +128,10 @@ public class ComplainSubmision extends AppCompatActivity {
                 else {
                     Toast.makeText(getApplicationContext(), "Not Inserted", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
-        });
 
-    }
+
+
 
 
     //On camera Intent Result
