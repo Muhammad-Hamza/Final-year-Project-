@@ -1,9 +1,7 @@
 package com.example.hamza.finalyearproject;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import android.content.Intent;
 import android.view.View;
@@ -13,13 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
-import butterknife.BindViews;
 
 public class LoginActivity extends AppCompatActivity {
 
-    DataBaseHelperClass complainDB;
+
+
+    DBHelper complainDB;
 
     private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
     private static final String TAG = "Login Activity";
@@ -41,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        complainDB = new DataBaseHelperClass(this);
+        complainDB = new DBHelper(this);
 
 
 

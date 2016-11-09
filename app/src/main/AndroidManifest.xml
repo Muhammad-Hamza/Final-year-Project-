@@ -21,6 +21,10 @@
         </activity>
         <activity android:name=".ComplainSubmisionAuthentication">
         </activity>
+        <activity android:name=".AndroidDatabaseManager"
+                  android:theme="@style/Theme.AppCompat.Light">
+        </activity>
     </application>
+
 
 </manifest>
