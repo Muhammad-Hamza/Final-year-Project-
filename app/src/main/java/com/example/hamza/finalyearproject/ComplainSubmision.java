@@ -49,6 +49,7 @@ public class ComplainSubmision extends AppCompatActivity {
         townTextView = (AutoCompleteTextView) findViewById(R.id.townfield);
         complainTypetextView = (AutoCompleteTextView) findViewById(R.id.complainlist);
         complainNextButton = (Button) findViewById(R.id.button_next);
+        databaseManagerButton = (Button) findViewById(R.id.databasemanager);
 
 
 
@@ -73,10 +74,10 @@ public class ComplainSubmision extends AppCompatActivity {
         complainTypetextView.setAdapter(complainTypesadapter);
         complainTypetextView.setThreshold(1);
 
-        ImageView cameraIntent = (ImageView) findViewById(R.id.camera);
+
 
         //Camera Intent
-      /**  ImageView cameraIntent = (ImageView) findViewById(R.id.camera);
+       ImageView cameraIntent = (ImageView) findViewById(R.id.camera);
       cameraIntent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,14 +86,14 @@ public class ComplainSubmision extends AppCompatActivity {
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(intent,IMAGE_REQUEST );
             }
-        });**/
+        });
 
         //NextButton Of Complainsubmision
         complainNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //InsertDAta into Database
-                insertData();
+               insertData();
                 Intent intent = new Intent(ComplainSubmision.this,ComplainSubmisionAuthentication.class);
                 startActivity(intent);
             }
@@ -137,11 +138,15 @@ public class ComplainSubmision extends AppCompatActivity {
     //On camera Intent Result
 /**
     protected void onActivityResult(int requestCode,int resultCode,Intent intent)
+
     {
         if(requestCode==IMAGE_REQUEST && resultCode == Activity.RESULT_OK)
 
         {
-          //  http://stackoverflow.com/questions/5991319/capture-image-from-camera-and-display-in-activity
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            imageView.setImageBitmap(photo);
         }
-    }**/
+    }
+}
+**/
 }

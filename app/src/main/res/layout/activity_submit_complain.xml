@@ -129,7 +129,7 @@
         android:padding="10dp"
          />
    <Button
-    android:id="@+id/button_submit"
+    android:id="@+id/databasemanager"
     android:layout_width="50dp"
     android:layout_height="50dp"
     style="@style/customTextcolor"
