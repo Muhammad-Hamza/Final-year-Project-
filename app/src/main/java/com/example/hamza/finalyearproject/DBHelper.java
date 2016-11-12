@@ -26,7 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String COL_3 = "UC";
     private static final String COL_4 = "COMPLAIN_TYPE";
     private static final String COL_5 = "DESC";
-   // private static final String COL_6 = "Image";
+    private static final String COL_6 = "Image";
 
 
 
@@ -46,7 +46,7 @@ public class DBHelper extends SQLiteOpenHelper {
   //      );
         String CREATE_DAY_TABLE = "CREATE TABLE " + TABLE_NAME + "("
                 +COL_1 + " INTEGER PRIMARY KEY," + COL_2 + " TEXT," + COL_3 + " TEXT, "
-                + COL_4 + " TEXT," + COL_5 + " TEXT" + ");";
+                + COL_4 + " TEXT," + COL_5 + " TEXT," + COL_6 +" BLOB"+");";
         db.execSQL(CREATE_DAY_TABLE);
       //  db.execSQL("create table"+TABLE_NAME+"(C_ID INTEGER PRIMARY KEY AUTOINCREMENT,TOWN_NAME TEXT,UC TEXT,COMPLAIN_TYPE TEXT,DESC TEXT)");
 
@@ -59,14 +59,15 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertComplain (String townName, String uc_Num, String complainType,String Desc) {
+    public boolean insertComplain (String townName, String uc_Num, String complainType,String Desc,byte[] image)
+    {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("TOWN_NAME", townName);
         contentValues.put("UC", uc_Num);
         contentValues.put("COMPLAIN_TYPE", complainType);
         contentValues.put(COL_5,Desc);
-       // contentValues.put("place", place);
+       contentValues.put(COL_6, image );
       long result =   db.insert(TABLE_NAME, null, contentValues);
         if(result== -1)
         {
